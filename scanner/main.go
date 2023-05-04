@@ -47,7 +47,7 @@ func scanPorts(ip string,ports string,items *[]models.OpenPort, wg *sync.WaitGro
 			conn.Close()
 			*items = append(*items, openPort)
 		}else{
-			fmt.Printf("[ERROR]: %v\n",err)
+			fmt.Printf("[%v]: %v\n",time.Now().Local().String(),err)
 		}
 	}
 }
