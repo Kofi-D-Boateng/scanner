@@ -10,7 +10,7 @@ const (
 )
 
 type DiscoveredItem struct {
-	Number      int32
+	Number      int
 	Name        string
 	Level       CriticalLevel
 	Message     string
@@ -24,6 +24,4 @@ type Vulnerability struct {
 	CVEAvailable bool
 }
 
-type OpenPort struct {
-	DiscoveredItem
-}
+type OpenPort DiscoveredItem

@@ -6,6 +6,9 @@ import (
 	"os"
 	"runtime"
 	"strconv"
+
+	"github.com/Kofi-D-Boateng/scanner/models"
+	"github.com/Kofi-D-Boateng/scanner/scanner"
 )
 
 var (
@@ -42,5 +45,10 @@ func main() {
 		fmt.Printf("[OS]: %v\n",os_name)
 		fmt.Printf("[ips]: %v\n",ips)
 		fmt.Printf("[ports]: %v\n",ports)
+	}
+	var items []models.OpenPort
+	scanner.StartPortScan(&items,&ips,&ports)
+	for _,item := range items{
+		fmt.Println(item)
 	}
 }
